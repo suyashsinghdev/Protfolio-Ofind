@@ -3,200 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First CSS</title>
+<title>Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
     margin: 0;
-    height: 200vh;
-    background-color: whitesmoke;
+    background: whitesmoke;
     font-family: "Poppins", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+
 
 .nav{
     height: 60px;
-    width: 100%;
-    backdrop-filter: blur(20px);
-    background-color: #000000;
+    background: black;
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .logo{
-    font-size: 25px;
-    font-weight: bold;
-    background: whitesmoke;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-left: 4%;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: slideDown 1s ease-out forwards;
-}
-
-.logo:hover{   
-    transform: scale(1.08);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.links{
-    display: flex;
-    gap: 20px;
-}
-
-.nav a{
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 8px 18px;
-    font-size: 16px;
-    font-weight: 600;
     color: white;
-    background: rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: slideDown 1s ease-out forwards;
+    font-weight: bold;
+    font-size: 20px;
+    animation: slideDown 1s forwards;
 }
 
-.nav a:hover{   
-    transform: scale(1.1);
+.links a{
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    animation: slideDown 1s forwards;
+}
+
+.links a:hover{
     background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.links a:nth-child(1){ animation-delay: 0.2s; }
-.links a:nth-child(2){ animation-delay: 0.4s; }
-.links a:nth-child(3){ animation-delay: 0.6s; }
-.links a:nth-child(4){ animation-delay: 0.8s; }
 
-@keyframes slideDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.intro{
+    text-align: center;
+    padding: 40px;
 }
 
 .intro h1{
-    color: #000000;
-    font-size: 80px;
-    margin-top: 50px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideUp 0.8s ease-out forwards;
+    font-size: 60px;
+    animation: slideUp 1s forwards;
 }
 
 .intro p{
-    font-size: 18px;
     max-width: 600px;
-    color: #000000;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    text-align: center;
-    margin: 10px auto;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideUp 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.expriance p{
-    font-size: 20px;
-    max-width: 600px;
-    color: #000000;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    text-align: center;
-    margin: 10px auto;
+    margin: auto;
+    animation: slideUp 1s 0.3s forwards;
 }
 
 
 #para1{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-
 #para1 span{
-    color: #000000;
-    font-size: 14px;
-    border-radius: 40px;
-    background-color: #ffffff;
-    padding: 8px 16px;
+    background: white;
+    padding: 8px 14px;
+    border-radius: 20px;
     transition: 0.3s;
 }
 
-
 #para1 span:hover{
-    background-color: black;
+    background: black;
     color: white;
-    transform: scale(1.08);
-    cursor: pointer;
 }
 
 
+.work h1{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 60px;
+}
+
+.work-section{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+
+.work-card{
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: fadeIn 1s ease forwards;
+}
+
+.work-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.work-card:hover img{
+    transform: scale(1.08);
+}
+
+.work-card.large{
+    grid-column: span 2;
+    height: 300px;
+}
+
+.work-card.small{
+    height: 200px;
+}
+
+.work-overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+
+.footer{
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.social-icons{
+    margin-top: 10px;
+}
+
+.social-icons a{
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+    color: #00ffcc;
+    transform: scale(1.2);
+}
+
+@keyframes slideDown {
+    from {opacity:0; transform:translateY(-40px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideUp {
+    from {opacity:0; transform:translateY(40px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
-<nav class="nav">
-    <div class="logo">
-        SUYASH SINGH 
-    </div>
 
+<nav class="nav">
+    <div class="logo">SUYASH SINGH</div>
     <div class="links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Services</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </div>
 </nav>
 
+
 <div class="intro">
-   <h1>Hi, I’M SUYASH SINGH</h1>
+    <h1>Hi, I'M SUYASH</h1>
+    <p>I build modern websites with clean UI and smooth animations.</p>
 
-   <p>
-      From simple web pages to scalable digital projects,
-      I combine creative design with coding skills
-      to build fast, responsive, and user-friendly websites.
-   </p>
+    <div id="para1">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Design</span>
+    </div>
+</div>
 
-   <div class="expriance">
-       <p>Experienced in</p>
 
-       <p id="para1">
-           <span>HTML</span>
-           <span>CSS</span>
-           <span>Designing</span>
-           <span>Java</span>
-       </p>
-   </div>
-   <div id="work1">
+<div class="work">
+    <h1>WORK</h1>
+</div>
 
-   </div>
+<div class="work-section">
+
+    <div class="work-card large">
+        <img src="https://images.unsplash.1291518857-4e27b48ff24e">
+        <div class="work-overlay">Featect</div>
+    </div>
+
+    <div class="work-card small">
+        <img src="https://images.unspl/photo-cd4628902d4a">
+        <div class="work-overlay">UI</div>
+    </div>
+
+    <div class="work-card small">
+        <img src="https://images.uns963-aa79dcee981c">
+        <div class="work-overlay">rd</div>
+    </div>
+
+    <div class="work-card small">
+        <img src="https://is.unsplash.co23275335684-37898b6baf30">
+        <div class="work-overlay">Pr</div>
+    </div>
+
+    <div class="work-card small">
+        <img src="ht://images.unspo-1511512578047-dfb367046420">
+        <div class="work-overlay">Gaming UI</div>
+    </div>
 
 </div>
 
+
+<footer class="footer">
+    <p>© 2026 Suyash Singh  </p>
+
+    <div class="social-icons">
+        <a href="https://instagram.com/suyash_singh563" target="https://www.instagram.com/suyash_singh563/">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://discord.com" target="">
+            <i class="fab fa-discord"></i>
+        </a>
+
+        <a href="https://github.com/suyashsinghdev" target="https://github.com/suyashsinghdev">
+            <i class="fab fa-github"></i>
+            
+
+        </a>
+    </div>
+</footer>
+
 </body>
 </html>
+
+<!-- Starting date 22/4/26 done on 25/4/26 -->
